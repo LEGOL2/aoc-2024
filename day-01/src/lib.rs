@@ -27,11 +27,9 @@ fn convert(input: Vec<String>) -> (Vec<i32>, Vec<i32>) {
         left.push(i32::from_str(split.next().unwrap()).unwrap());
         right.push(i32::from_str(split.next().unwrap()).unwrap());
     }
-    
+
     (left, right)
 }
-
-
 
 #[cfg(test)]
 mod tests {

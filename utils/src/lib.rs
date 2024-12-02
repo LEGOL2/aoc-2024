@@ -1,9 +1,13 @@
-use std::{fs::File, io::{BufRead, BufReader}};
+use std::{
+    fs::File,
+    io::{BufRead, BufReader},
+};
 
 pub fn read_file(file_name: &str) -> Result<Vec<String>, std::io::Error> {
     let file = File::open(file_name)?;
-    Ok(BufReader::new(file).lines().map(
-        |l| l.expect("Failed to parse the line"))
+    Ok(BufReader::new(file)
+        .lines()
+        .map(|l| l.expect("Failed to parse the line"))
         .collect())
 }
 
